@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>PRACTICE APP</title>
+</head>
+
+<body>
+
+    <!----------------------------------- Header Container  -------------------------------->
+    <div class="header-container">
+        <div class="nav">
+            <div class="logo">
+                <i class='bx bxs-book-content'></i>
+                <a href="#">Practice Book</a>
+            </div>
+
+            <div class="right-section">
+                <i class='bx bx-bell'></i>
+                <i class='bx bx-search'></i>
+
+                <div class="profile">
+                    <div class="info">
+                        <img src="assets/img/profile.png">
+                        <div>
+                            <a href="#">Karan Shekhawat</a>
+                            <p>Stenogapher</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------------------- Main Container  -------------------------------->
+
+
+    <!----------------------------------- Bottom Container  -------------------------------->
+    <div class="bottom-container">
+        <!----------------------------------- Practice Container  -------------------------------->
+        <div class="prac-sat">
+            <div class="info">
+                <h3>Your Practice Set</h3>
+                <a href="#">View All</a>
+            </div>
+            <div class="heading">
+                <h4 id="big">Pracice Set</h4>
+                <h4 id="big">Progress</h4>
+                <h4 id="big">Start</h4>
+            </div>
+
+            <!---------------------- Set Start Container  -------------------------------->
+            <div class="set-list">
+
+                <!--------------------------------------- Card 1 -------------->
+
+                <div class="tabs">
+                    <div class="left">
+                        <div class="icon">
+                            <i class='bx bx-book-alt'></i>
+                        </div>
+                        <div class="details">
+                            <H4>Spot the Error</H4>
+                            <p>0/0 Questions</p>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <h5>0% Finished</h5>
+                        <div class="progress-bar">
+                            <div class="bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button class="start-btn">
+                            <i class='bx bx-play'></i> Start
+                        </button>
+                    </div>
+                </div>
+
+                <!--------------------------------------- Card 2 -------------->
+                <div class="tabs">
+                    <div class="left">
+                        <div class="icon">
+                            <i class='bx bx-book-alt'></i>
+                        </div>
+                        <div class="details">
+                            <H4>Sentance Improvement</H4>
+                            <p>0/0 Questions</p>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <h5>0% Finished</h5>
+                        <div class="progress-bar">
+                            <div class="bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button class="start-btn">
+                            <i class='bx bx-play'></i> Start
+                        </button>
+                    </div>
+                </div>
+                <!--------------------------------------- Card 3 -------------->
+                <div class="tabs">
+                    <div class="left">
+                        <div class="icon">
+                            <i class='bx bx-book-alt'></i>
+                        </div>
+                        <div class="details">
+                            <H4>Trignometry</H4>
+                            <p>0/0 Questions</p>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <h5>0% Finished</h5>
+                        <div class="progress-bar">
+                            <div class="bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button class="start-btn">
+                            <i class='bx bx-play'></i> Start
+                        </button>
+                    </div>
+                </div>
+                <!--------------------------------------- Card 4 -------------->
+                <div class="tabs">
+                    <div class="left">
+                        <div class="icon">
+                            <i class='bx bx-book-alt'></i>
+                        </div>
+                        <div class="details">
+                            <H4>Geography</H4>
+                            <p>0/0 Questions</p>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <h5>0% Finished</h5>
+                        <div class="progress-bar">
+                            <div class="bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button class="start-btn">
+                            <i class='bx bx-play'></i> Start
+                        </button>
+                    </div>
+                </div>
+                <!--------------------------------------- Card 5 -------------->
+
+
+
+
+
+            </div>
+            <!---------------------- Set Start Container  -------------------------------->
+
+        </div>
+
+
+        <!----------------------------------- Progress Container  -------------------------------->
+
+        <div class="progress-container">
+
+            <!-------------------  Streak Container  -------------------------------->
+            <div class="streak">
+                <div class="header">
+                    <h4>Daily</h4>
+                </div>
+
+                <div class="streak-container">
+                    <div class="day" onclick="toggleStreak(this)">
+                        <div class="icon">○</div>
+                        <div>Mon</div>
+                    </div>
+                    <div class="day" onclick="toggleStreak(this)">
+                        <div class="icon">○</div>
+                        <div>Tue</div>
+                    </div>
+                    <div class="day" onclick="toggleStreak(this)">
+                        <div class="icon">○</div>
+                        <div>Wed</div>
+                    </div>
+                    <div class="day" onclick="toggleStreak(this)">
+                        <div class="icon">○</div>
+                        <div>Thu</div>
+                    </div>
+                    <div class="day" onclick="toggleStreak(this)">
+                        <div class="icon">○</div>
+                        <div>Fri</div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="chartitem">
+                    <canvas class="activity-chart"></canvas>
+                </div>
+            </div>
+
+
+            <!-------------------  Stats Container  -------------------------------->
+            <div class="stats">
+                <div class="header">
+                    <h4>Statistics</h4>
+                    <a href="#">English <i class='bx bx-chevron-down'></i></a>
+                </div>
+                <div class="stat-chart">
+                    <canvas class="prog-chart"></canvas>
+                </div>
+            </div>
+
+            <!-------- -- Events Container  -------------------------------->
+        </div>
+    </div>
+
+    <!----------------------------------- Popup Modal  -------------------------------->
+
+    <!-- Modal Popup for Test Start -->
+    <!-- Test Start Modal -->
+    <div id="testModal" class="modal-overlay">
+        <div class="modal-container">
+            <!-- Top Bar -->
+            <div class="modal-top-bar">
+                <div class="modal-top-logo">
+                    <i class='bx bxs-food-menu'></i>
+                    <h5>PC</h5>
+                </div>
+                <div class="modal-top-right">
+                    <div class="modal-top-topics-icon">
+                        <i class='bx bxs-book'></i>
+                        <h5>Topics</h5>
+                    </div>
+                    <div class="modal-top-profile-icon">
+                        <i class='bx bxs-user'></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="modal-main">
+                <div class="modal-main-icon-container">
+                    <img src="assets/img/accept.png" alt="Modal Icon">
+                </div>
+                <h1 class="modal-main-h1">Your test is ready!</h1>
+                <p class="modal-main-p">Please read the following instructions before starting your test:</p>
+
+                <div class="modal-main-info">
+                    <div class="modal-test-info">
+                        <div class="modal-topic-info">
+                            <div class="modal-main-exam" id="examTitle">Trignometry</div>
+                            <div class="modal-maini-subjects" id="examSubject">Maths</div>
+                        </div>
+                        <div class="modal-main-difficulty">
+                            <i class='bx bxs-bowl-hot'></i>
+                            <span>FOCUS</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-main-details">
+                        <!-- Time Allowed -->
+                        <div class="modal-main-detail">
+                            <div class="modal-detail-int">
+                                <div class="modal-detail-icon">
+                                    <i class='bx bxs-time-five'></i>
+                                </div>
+                                <div class="modal-detail-label">Time allowed</div>
+                            </div>
+                            <div class="modal-detail-value" id="timeAllowed">25 mins</div>
+                        </div>
+
+                        <!-- Question Select -->
+                        <div class="modal-main-detail">
+                            <div class="modal-detail-int">
+                                <div class="modal-detail-icon">
+                                    <i class='bx bxs-notepad'></i>
+                                </div>
+                                <div class="modal-detail-label">No. of Questions</div>
+                            </div>
+                            <select class="modal-dropdown-select" id="questionCount">
+                                <option value="25">25</option>
+                                <option value="50" selected>50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+
+                        <!-- Total Marks -->
+                        <div class="modal-main-detail">
+                            <div class="modal-detail-int">
+                                <div class="modal-detail-icon">
+                                    <i class='bx bxs-check-square'></i>
+                                </div>
+                                <div class="modal-detail-label">Total Marks</div>
+                            </div>
+                            <div class="modal-detail-value" id="totalMarks">100</div>
+                        </div>
+                    </div>
+
+                    <div class="modal-btn">
+                        <button class="start-button-modal" id="startTestBtn">
+                            Start Test
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script>
+        // Define toggleStreak function in global scope
+        function toggleStreak(element) {
+            let icon = element.querySelector('.icon');
+            if (icon.classList.contains('completed')) {
+                icon.classList.remove('completed');
+                icon.innerHTML = '○';
+            } else {
+                icon.classList.add('completed');
+                icon.innerHTML = '🔥';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
