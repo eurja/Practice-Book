@@ -1,0 +1,211 @@
+<script type="module" src="backend/firebase/firebase.js"></script>
+<script type="module" src="backend/firebase/fetch.js"></script>
+<script type="module" src="js/pracScript.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000">
+    <title>Grammar Test</title>
+    <link rel="stylesheet" href="css/pracStyle.css">
+</head>
+<body>
+    <!-- Header container -->
+    <header class="header-test">
+        <!-- Profile container on the left -->
+        <div class="profile-container">
+            <div class="profile-icon"></div>
+            <span class="username">USER NAME</span>
+        </div>
+        
+        <!-- Date container on the right -->
+        <div class="date-container">
+            <p class="date-text">Sunday, 16 Feb 2024</p>
+        </div>
+    </header>
+
+    <!-- Title container with test name and timer -->
+    <div class="title-container">
+        <!-- Test name section -->
+        <div class="test-name-container">
+            <!-- Hardcoded part -->
+            <span class="test-label">TEST NAME :</span>
+            <!-- This part will be dynamic -->
+            <span class="test-title">ENGLISH GRAMMER : SPOT THE ERROR</span>
+        </div>
+
+        <!-- Timer section -->
+        <div class="timer-container">
+            <!-- Hardcoded part -->
+            <span class="timer-label">Remaining Time : </span>
+            <!-- Timer display -->
+            <span class="timer-display">10:00</span>
+            <!-- Minutes text -->
+            <span class="timer-text">Minutes</span>
+            <!-- Clock icon -->
+            <img src="assets/img/stopwatch.png" alt="Timer" class=" clock-icon">
+        </div>
+    </div>
+
+
+<div class="question-area">
+<!-- Question box container -->
+<div class="question-box">
+  <!-- Question number container -->
+  <div class="question-number-container">
+      <span class="question-label"></span>
+      <div class="question-number"></div>
+      <div class="bottom-border"></div>
+  </div>
+
+  <!-- Question text container -->
+  <div class="question-text-container">
+      <p class="question-text">
+          <!-- This will be filled by JavaScript -->
+      </p>
+  </div>
+
+  <!-- Exam name container -->
+  <div class="exam-name-container">
+      <span class="exam-name"></span>
+      <div class="bottom-border2"></div>
+  </div>
+
+  <div class="right-container">
+    <div class="pause-txt">Pause</div>
+    <img src="assets/img/pause-btn.png" alt="Pause" class="pause-btn">
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- Options container where options will be dynamically added -->
+<div id="options-wrapper"></div>
+
+
+<!-- Question box container -->
+<div class="solution-box">
+    <!-- Question number container -->
+    <div class="solution-label-container">
+        <span class="solution-label">Solution</span>
+        <div class="bottom-border3"></div>
+    </div>
+    <!-- Question text container -->
+    <div class="solution-text-container">
+        <span class="correct-answer-label">Correct Answer : </span>
+        <span class="correct-answer-text">
+            <!-- This will be filled by JavaScript -->
+        </span>
+        <br><br>
+        <span class="explanation-label">Explanation :</span>
+        <span class="explanation-text">
+            <!-- This will be filled by JavaScript -->
+        </span>
+        <div class="bottom-border4"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+    <!-- Footer container -->
+    <footer class="footer-container">
+        <div class="footer-left">
+            <img src="assets/img/back-btn.png" alt="Back" class="footer-btn back-btn">
+        </div>
+        
+        <div class="footer-nav">
+            <!-- nav-question-number elements will be added here -->
+        </div>
+        
+        <div class="footer-right">
+            <img src="assets/img/next-btn.png" alt="Next" class="footer-btn next-btn">
+        </div>
+    </footer>
+
+
+
+
+<!---    
+    <script src="firebase/questions.js"></script>
+    <script type="module" src="js/pracScript.js"></script>
+-->
+
+    <!-- Add before closing body tag -->
+    <div id="pauseModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-title">Quiz Paused</h2>
+            <p class="modal-text">Current Test: <span id="pausedTestTitle" class="test-title-modal"></span></p>
+            <button id="resumeBtn" class="modal-button">Resume Quiz</button>
+        </div>
+    </div>
+
+
+   <!-- ======================== QUICK SUBMIT BUTTON ======================== -->
+    <!-- Fixed at bottom-right, just above the footer nav -->
+<div class="quickSubmitBtn">
+    <div class="submit-txt">Submit</div>
+    <img src="assets/img/submit-btn.png" alt="Submit" class="submit-Btn">
+  </div>
+<!---
+<button id="quickSubmitBtn" class="quickSubmitBtn">Submit Test</button>
+*/-->
+
+    <!-- ======================== SUBMIT MODAL ======================== -->
+    <div id="submitModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title">Test Complete! 🎉</h2>
+            <p class="modal-text">Ready to submit your test?</p>
+            <div class="result-stats" style="display: none;">
+                <p>Correct Answers: <span id="correctCount">0</span></p>
+                <p>Wrong Answers: <span id="wrongCount">0</span></p>
+            </div>
+            <button id="finalSubmitBtn" class="modal-button">Submit Test</button>
+        </div>
+    </div>
+  <script>
+        // When "Submit Test" (bottom-right) is clicked, show the same #submitModal
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.querySelector(".submit-Btn");
+            if (submitBtn) {
+                submitBtn.addEventListener("click", () => {
+                    const submitModal = document.getElementById("submitModal");
+                    if (submitModal) {
+                        submitModal.style.display = "flex";
+                        document.body.classList.add("quiz-paused");
+                    }
+                });
+            }
+
+            // If user clicks outside the modal content, close whichever modal is open
+            window.addEventListener("click", (event) => {
+                const pauseModal = document.getElementById("pauseModal");
+                const submitModal = document.getElementById("submitModal");
+                if (event.target === pauseModal) {
+                    pauseModal.style.display = "none";
+                    document.body.classList.remove("quiz-paused");
+                }
+                if (event.target === submitModal) {
+                    // If they click outside the submit modal (but not on "Confirm"), just close it
+                    submitModal.style.display = "none";
+                    document.body.classList.remove("quiz-paused");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
