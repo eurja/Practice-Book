@@ -1,0 +1,1246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #f1f3f2;
+    font-size: 14px;
+}
+
+canvas {
+    width: 100% !important;
+}
+
+img {
+    object-fit: cover;
+}
+
+body {
+    background: #f1f3f2;
+}
+
+.header-container {
+    background: #031224;
+    border-radius: 0 0 0 0;
+    padding-bottom: 10px;
+}
+
+.header-container .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 14px;
+    border-bottom: 2px solid #1e293b;
+}
+
+.header-container .nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-container .nav .logo i {
+    color: #f1f3f2;
+    font-size: 24px;
+}
+
+.header-container .nav .logo a {
+    font-size: 16px;
+}
+
+.header-container .nav .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.header-container .nav .nav-links a {
+    color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.header-container .nav .nav-links a:hover {
+    color: #fff;
+}
+
+.header-container .nav .right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-container .nav .right-section>i {
+    color: #f1f3f2;
+    background: #1e293b;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header-container .nav .right-section .profile {
+    display: flex;
+    align-items: center;
+    background: #1e293b;
+    padding: 0 10px;
+    border-radius: 50px;
+    gap: 10px;
+}
+
+.header-container .nav .right-section .profile .info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-container .nav .right-section .profile .info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #f1f3f2;
+}
+
+.header-container .nav .right-section .profile .info a {
+    font-size: 13px;
+}
+
+.header-container .nav .right-section .profile .info p {
+    font-size: 13px;
+    color: #ccc;
+}
+
+.header-container .nav .right-section .profile>i {
+    color: #f1f3f2;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/*------------------------------------- Header -----------------------------------------------*/
+
+.main-container {
+    background: #031224;
+    border-radius: 0 0 30px 30px;
+    padding-bottom: 10px;
+}
+
+.main-container .status {
+    padding: 10px 20px 10px;
+}
+
+.main-container .status .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.main-container .status .header h4 {
+    color: #f1f3f2;
+    font-weight: 500;
+}
+
+.main-container .status .header h4#big {
+    flex: 3;
+}
+
+.main-container .status .header h4#small {
+    flex: 1;
+    padding-left: 90px;
+}
+
+.main-container .status .items-list {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.main-container .status .items-list .item {
+    background: #bfdbfe;
+    width: 20%;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.main-container .status .items-list .item:nth-child(2) {
+    background: #ffefe2;
+}
+
+.main-container .status .items-list .item:nth-child(3) {
+    background: #e0f2fe;
+}
+
+.main-container .status .items-list .item:nth-child(4) {
+    background: #FCF3FD;
+}
+
+.main-container .status .items-list .item:nth-child(5) {
+    background: #FAFAFA;
+}
+
+/*   --------  Graph -------------  /*
+.main-container .status .items-list .item:nth-child(6){
+    background: #031224;
+    padding: 10px;
+}
+*/
+/*----------------------------ITEM info--------------------------------------*/
+
+.main-container .status .items-list .item .info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.main-container .status .items-list .item .info h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.main-container .status .items-list .item .info p {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.main-container .status .items-list .item .info>i {
+    font-size: 20px;
+    padding: 10px;
+    background: #031224;
+    color: #f1f3f2;
+    border-radius: 50%;
+}
+
+/*----------------------------    progress-bar Bar  --------------------------------------*/
+
+.main-container .status .items-list .item .progress-bar {
+    position: relative;
+    height: 10px;
+    background: #b7c0cd;
+    border-radius: 10px;
+}
+
+.main-container .status .items-list .item .progress-bar .bar {
+    width: 92%;
+    height: 10px;
+    background: #031224;
+    border-radius: 10px;
+}
+
+.main-container .status .items-list .item .progress-bar::before {
+    content: "92%";
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/*----------------------------------    2     ----------------------------*/
+
+
+.main-container .status .items-list .item:nth-child(2) .progress-bar {
+    background: #d6d3d1;
+}
+
+.main-container .status .items-list .item:nth-child(2) .progress-bar .bar {
+    width: 40%;
+}
+
+.main-container .status .items-list .item:nth-child(2) .progress-bar::before {
+    content: "40%";
+}
+
+/*----------------------------------    3      ----------------------------*/
+
+.main-container .status .items-list .item:nth-child(3) .progress-bar {
+    background: #94a3b8;
+}
+
+.main-container .status .items-list .item:nth-child(3) .progress-bar .bar {
+    width: 35%;
+}
+
+.main-container .status .items-list .item:nth-child(3) .progress-bar::before {
+    content: "35%";
+}
+
+/*----------------------------------    4      ----------------------------*/
+
+.main-container .status .items-list .item:nth-child(4) .progress-bar {
+    background: #94a3b8;
+}
+
+.main-container .status .items-list .item:nth-child(4) .progress-bar .bar {
+    width: 80%;
+}
+
+.main-container .status .items-list .item:nth-child(4) .progress-bar::before {
+    content: "80%";
+}
+
+/*----------------------------------    5      ----------------------------*/
+
+.main-container .status .items-list .item:nth-child(5) .progress-bar {
+    background: #94a3b8;
+}
+
+.main-container .status .items-list .item:nth-child(5) .progress-bar .bar {
+    width: 65%;
+}
+
+.main-container .status .items-list .item:nth-child(5) .progress-bar::before {
+    content: "65%";
+}
+
+/*------------------------------------Bottom Container --------------------------------------------*/
+
+.bottom-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+
+
+/*--------------------------------- prac set Container ------------------------------*/
+main .planning {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+main .planning .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #F7F7F7;
+    border-radius: 20px;
+}
+
+main .planning .item .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main .planning .item .left .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .planning .item:nth-child(1) .left .icon {
+    background: #D1E6F9;
+}
+
+main .planning .item:nth-child(1) .left .icon i {
+    color: #369FFF;
+}
+
+main .planning .item:nth-child(2) .left .icon {
+    background: #F9E5D2;
+}
+
+main .planning .item:nth-child(2) .left .icon i {
+    color: #FF993A;
+}
+
+main .planning .item:nth-child(3) .left .icon {
+    background: #E2EDD2;
+}
+
+main .planning .item:nth-child(3) .left .icon i {
+    color: #8AC53E;
+}
+
+main .planning .item:nth-child(4) .left .icon {
+    background: #F9F0D3;
+}
+
+main .planning .item:nth-child(4) .left .icon i {
+    color: #FFD143;
+}
+
+main .planning .item .left .details h5 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+main .planning .item .left .details p {
+    font-size: 12px;
+    color: #BDBDBD;
+}
+
+main .planning .item>i {
+    cursor: pointer;
+}
+
+/*-----------------------------------------------------------------------------------*/
+.bottom-container .prac-sat {
+    background: #fefefe;
+    padding: 20px;
+    border-radius: 24px;
+}
+
+.bottom-container .prac-sat {
+    width: 80%;
+}
+
+.bottom-container .prac-sat .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    padding: 8px;
+    /*    background: #efeded;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e0e0;*/
+}
+
+.bottom-container .prac-sat .info a {
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    /*    background: #efeded;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e0e0;*/
+}
+
+
+.bottom-container .prac-sat .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    padding: 8px;
+    padding-right: 24px;
+    background: #efeded;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e0e0;
+}
+
+.bottom-container .prac-sat .header h4 {
+    font-weight: 600;
+}
+
+.bottom-container .prac-sat .set-list .tabs {
+    display: grid;
+    grid-template-columns: 1fr 30% 30%;
+    /* Adjust these values as needed */
+    gap: 10px;
+    align-items: center;
+    background: white;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid #e1e0e0;
+    margin-bottom: 0.2%;
+}
+
+/*-----------------------------left -----------------------------*/
+
+.bottom-container .prac-sat .set-list .tabs .left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 8px;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+}
+
+.bottom-container .prac-sat .set-list .tabs .left .icon {
+    background: #fefefe;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+    padding: 8px;
+}
+
+
+
+.bottom-container .prac-sat .set-list .tabs .left .details {
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 4px 20px;
+    font-size: 12px;
+    color: #000;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/*----------------------------- Middle   -----------------------------*/
+
+.bottom-container .prac-sat .set-list .tabs .middle {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    font-size: 12px;
+    color: #000;
+    border-radius: 20px;
+    font-weight: 600;
+    width: 100%;
+    /* Remove fixed width */
+}
+
+.bottom-container .prac-sat .set-list .tabs .middle h5 {
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    margin: 0;
+}
+
+.bottom-container .prac-sat .set-list .tabs .middle .progress-bar {
+    position: relative;
+    height: 8px;
+    background: #e1e0e0;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.bottom-container .prac-sat .set-list .tabs .middle .progress-bar .bar {
+    height: 100%;
+    background: #7928a7;
+    border-radius: 10px;
+}
+
+/*----------------------------- Right -----------------------------*/
+
+.bottom-container .prac-sat .set-list .tabs .right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Align button to the right */
+    padding-right: 2%;
+}
+
+.bottom-container .prac-sat .set-list .tabs .right .start-btn {
+    background: olivedrab;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bottom-container .prac-sat .set-list .tabs .right .start-btn:hover {
+    background: #2a7acc;
+}
+
+.bottom-container .prac-sat .set-list .tabs .right .start-btn i {
+    font-size: 16px;
+}
+
+
+/*--------------------------------- progress Container ------------------------------*/
+
+
+.bottom-container .progress-container {
+    background: #fefefe;
+    padding: 15px;
+    border-radius: 24px;
+    width: 25%;
+}
+
+.bottom-container .progress-container .streak {
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #fefefe;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e1e0e0;
+}
+
+.bottom-container .progress-container .streak .header {
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #fefefe;
+    border-radius: 10px;
+    margin-bottom: 2px;
+}
+
+.bottom-container .progress-container .header h4 {
+    font-weight: 600;
+}
+
+.bottom-container .progress-container .streak .circle {
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #efeded;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.bottom-container .progress-container .streak .chartitem {
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    padding: 20px 8px 0px 8px;
+    background: #efeded;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*------------------------ stats ------------------------------------*/
+
+
+
+.bottom-container .progress-container .stats {
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #fefefe;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e1e0e0;
+}
+
+.bottom-container .progress-container .stats .header {
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #fefefe;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-container .progress-container .header h4 {
+    font-weight: 600;
+}
+
+.bottom-container .progress-container .header a {
+    font-weight: 600;
+    color: #000;
+}
+
+.bottom-container .progress-container .stats .stat-chart {
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #efeded;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/*------------------------------------------------------------------------*/
+
+.streak-container {
+    display: flex;
+    gap: 15px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+    margin-bottom: 10px;
+    background-color: #efeded;
+    justify-content: space-between;
+}
+
+.day {
+    text-align: center;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 50px;
+    color: #b7c0cd;
+}
+
+.completed {
+    /*background-color: #ff9800;*/
+    color: white;
+    font-size: 30px;
+}
+
+
+/*------------------------------------------------------------------------*/
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.countdown {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+.start-btn-modal {
+    background: olivedrab;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1300px) {
+
+
+
+    .bottom-container .progress-container .events .item {
+        padding: 6px 10px;
+    }
+
+    .bottom-container .progress-container .events .item>div i {
+        font-size: 20px;
+    }
+
+    .bottom-container .progress-container .events .item .event-info a {
+        font-size: 13px;
+    }
+
+    .bottom-container .progress-container .events .item .event-info p {
+        font-size: 12px;
+    }
+
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+
+
+
+@media screen and (max-width: 1080px) {
+
+    .header-container .nav .right-section .profile {
+        padding: 5px;
+    }
+
+    .main-container .status .header h4#small {
+        display: none;
+    }
+
+    .main-container .status .items-list {
+        flex-wrap: wrap;
+    }
+
+    .main-container .status .items-list .item {
+        width: 48%;
+    }
+
+    .bottom-container {
+        flex-wrap: wrap;
+    }
+
+    .bottom-container .prac-sat {
+        width: 100%;
+    }
+
+    .bottom-container .progress-container {
+        width: 48%;
+    }
+
+    .bottom-container .progress-container .events .item {
+        padding: 10px;
+    }
+
+    .bottom-container .progress-container .events .item>div i {
+        font-size: 30px;
+    }
+
+    .bottom-container .progress-container .events .item .event-info a {
+        font-size: 14px;
+    }
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+
+    .header-container .nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-container .status .items-list .item .info h5 {
+        font-size: 15px;
+    }
+
+    .bottom-container .progress-container {
+        width: 100%;
+    }
+
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------*/
+
+/* MODAL STYLES (NEW VERSION) */
+.modal-wrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.modal-container {
+    background-color: #fff;
+    width: 330px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/*------------------------------------------------*/
+/* Add/update these styles */
+/*
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure higher z-index than other elements */
+/*}*/
+
+.modal-container {
+    position: relative;
+    margin: 20px;
+    transform: none !important;
+    /* Override any existing transforms */
+}
+
+/* Add smooth animation */
+.modal-overlay {
+    transition: opacity 0.3s ease;
+}
+
+/* Add this if you want a scale animation */
+.modal-container {
+    animation: modalEnter 0.3s ease;
+}
+
+@keyframes modalEnter {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ... (rest of the modal CSS from popupV3.html) */
+
+/* TOP BAR */
+.modal-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    /* Creates the shadow below the border */
+}
+
+.modal-top-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-top-logo i {
+    font-size: 1.4rem;
+    color: #004cde;
+}
+
+.modal-top-logo h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    align-items: center;
+}
+
+.modal-top-right {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-top-topics-icon,
+.modal-top-profile-icon {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.modal-top-profile-icon {
+    color: #004cde;
+}
+
+.modal-top-topics-icon:hover,
+.modal-top-profile-icon:hover {
+    background-color: #f2f3f5;
+}
+
+/* MAIN CONTENT */
+.modal-main {
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-main-icon-container {
+    margin-bottom: 16px;
+}
+
+.modal-main-icon-container img {
+    width: 48px;
+    height: 48px;
+    /* Replace with your own icon if needed */
+}
+
+/* HEADINGS AND PARAGRAPHS */
+.modal-main-h1 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+.modal-main-p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.35;
+    /* Adjust this value to control the line spacing */
+
+}
+
+/* INFO WRAPPER */
+.modal-main-info {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+/* TEST INFO (Exam/Subject/Difficulty) */
+.modal-test-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-topic-info {
+    text-align: left;
+}
+
+.modal-main-exam {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    padding-bottom: 5px;
+    ;
+}
+
+.modal-maini-subjects {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.modal-main-difficulty {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: green;
+    padding: 6px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    /* Vertically align the items */
+    gap: 4px;
+}
+
+.modal-main-difficulty i {
+    color: white;
+}
+
+/* DETAILS WRAPPER */
+.modal-main-details {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
+
+/* INDIVIDUAL DETAIL ROWS */
+.modal-main-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-main-detail:last-child {
+    border-bottom: none;
+    /* Remove border on last row */
+}
+
+.modal-detail-int {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-detail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 1rem;
+    color: black;
+    border: 0.3px solid #cacaca;
+}
+
+/*
+  .modal-icon i{
+    color: #555;
+  }*/
+.modal-detail-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.modal-detail-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000;
+}
+
+/* DROPDOWN SELECT */
+.modal-dropdown-select {
+    padding: 0px 1px;
+    border-radius: 6px;
+    border: 0px solid #ccc;
+    background-color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #004cde;
+}
+
+/* Change text color of options to black */
+.modal-dropdown-select option {
+    color: black;
+}
+
+/* START BUTTON */
+.modal-btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.start-button-modal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #004cde;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button-modal i {
+    font-size: 1.2rem;
+}
+
+.start-button-modal:hover {
+    background-color: #003cbb;
+}
+
+/* Add a green background color for when the button is pressed */
+.start-button-modal.pressed {
+    background-color: green;
+    /* Green color */
+}
+
+
+
+/*------------------------------------------------------*/
+
+.enroll-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s ease;
+}
+
+.enroll-btn.enrolled {
+    background: #666;
+    cursor: not-allowed;
+}

@@ -1,0 +1,906 @@
+/* style.css */
+@charset "UTF-8";
+
+/* Update font-face declarations for TTF *//*
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}*/
+/*
+@font-face {
+  font-family: 'Urbanist';
+  src: url('../assets/fonts/Urbanist-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    /*font-family: Inter, -apple-system, Roboto, sans-serif;*/
+  font-family: 'Inter', sans-serif;
+    /*min-height: 100vh;*/
+}
+
+/* Headings and titles */
+/*h1, h2, h3, h4, h5, h6,
+.title-container,
+.test-label,
+.timer-label,*/
+
+
+.question-label,
+.header-test {
+  font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Use Urbanist's semi-bold weight */
+}
+
+
+/*--------------------------------------Header ------------------------------------------------------*/
+
+/* Header styles */
+.header-test {
+    background-color: #7928a7;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+
+/*-------------------Profile ------------------*/
+
+
+/* Profile container styles */
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.profile-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #f1f3f2;
+
+  /* Ensure the background image covers the entire div */
+  background-size: cover; /* Makes sure the image fills the container */
+  background-position: center; /* Centers the image within the container */
+  background-repeat: no-repeat; /* Prevents repeating the image if it doesn't fill the area */
+}
+
+/* Username styles */
+.username {
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+
+
+/*-------------------date ------------------*/
+
+/* Date container styles */
+.date-container {
+  display: flex;
+  align-items: center;
+}
+
+.date-text {
+  font-size: 14px;
+  color: #fff;
+  font-style: italic;
+}
+
+/*--------------------------------------Title ------------------------------------------------------*/
+
+
+/* Title container styles */
+.title-container {
+    background-color: #fff;
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid #7928a7;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold; 
+}
+
+/* Test name container styles */
+.test-name-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.test-label {
+    font-weight: 500;
+}
+
+
+/*-------------------timer ------------------*/
+
+/* Timer container styles */
+.timer-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.timer-label {
+    font-weight: 500;
+    color: #000;
+}
+
+.timer-display {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.timer-text {
+    font-weight: 500;
+}
+
+/* Clock icon styles */
+.clock-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/*-------------------test name ------------------*/
+
+
+
+
+/*--------------------------------------Main ------------------------------------------------------*/
+.question-area {
+  /*width: 100%;
+  padding: 0 20px;*/
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  
+
+}
+
+
+/* New right container styles */
+.right-container {
+  position: fixed; /* Changed from absolute to fixed */
+  right: 15px; /* Distance from right edge of screen */
+  top: 90px; /* Adjust based on your header height */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 3px 5px 3px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000; /* Ensure it stays above other content */
+  transform: translateX(0); /* Remove any horizontal translation */
+}
+
+
+.pause-txt {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: white;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.pause-btn {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-left: auto; /* Pushes button to far right */
+}
+
+/* Show pause text when container has paused class */
+.right-container.paused .pause-txt {
+  opacity: 1;
+}
+
+
+/* Keep hover effect only for non-paused state */
+.right-container:not(.paused):hover .pause-txt {
+  opacity: 1;
+}
+
+
+
+
+/* Hover state */
+.right-container:hover {
+  width: auto; /* Use auto width instead of fixed */
+  padding-right: 8px; /* Consistent padding */
+  background-color: #7928a7;
+}
+
+.right-container.paused {
+  background-color: #7928a7 !important; /* Purple background when paused */
+}
+
+/* Modify the hover state */
+.right-container:not(.paused):hover {
+  background-color: #7928a7; /* Only show hover color when not paused */
+}
+
+
+
+
+
+
+
+
+/*-------------------------question box ------------------------------------------*/
+
+
+/* Question box styles */
+.question-box {
+  margin-left: auto;  /* Centers the box */
+  margin-right: auto; /* Centers the box */
+  margin-top: 10px; /* Adds space at the top */
+  /*background-color: pink;*/
+  width: 1000px; /* Width of the main container */
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  gap: 5px; /* Adds space between child elements */
+  padding-bottom: 10px;
+  position: relative; 
+}
+
+/* Question number container styles */
+.question-number-container {
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: left;
+  /*background-color: green;*/
+  /*display: flex;
+  flex-direction: column;
+  align-items: flex-end;*/
+}
+
+.question-label {
+  /*font-weight: bold;*/
+  font-size: 18px;
+}
+
+.question-number {
+  /*font-weight: bold;*/
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Bottom border */
+.bottom-border {
+  width: 300px;
+  height: 2px;
+  background-color: #fff;
+  margin-top: 5px;
+}
+
+
+
+
+/* Question text container styles */
+.question-text-container {
+  margin-top: 10px;
+  flex: 1;
+  padding-bottom: 10px;
+  /*background-color: pink;*/
+  width: 100%; /* Full width of the main container */
+}
+
+.question-text {
+  /*font-weight: bold;*/
+  font-size: 16px;
+  color: white;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* Exam name container styles */
+.exam-name-container {
+  width: 100%;
+  margin-bottom: 0px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /*background-color: rgb(192, 255, 254);*/
+  margin-top: 3px;
+}
+
+.exam-name {
+  font-size: 12px;
+  font-style: italic;
+  color: white;
+  /*font-weight: bold;*/
+}
+
+/* Bottom border */
+.bottom-border2 {
+  width: 250px;
+  height: 1px;
+  background-color: #fff;
+  margin-top: 5px;
+}
+
+
+/*--------------------------------------------------------------------------*/
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .question-box {
+      gap: 5px;
+      margin: 10px;
+  }
+
+  .question-text {
+      font-size: 16px;
+  }
+
+  .question-label {
+      font-size: 16px;
+  }
+
+  .question-number {
+      font-size: 16px;
+  }
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .question-box {
+      width: 100%;
+      padding: 10px;
+  }
+}
+
+
+
+/* Dark mode fallback */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #000;
+      color: #fff;
+  }
+}
+
+
+
+/*--------------------------------------Option ------------------------------------------------------*/
+  
+/* Question box styles *//*
+.options-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color: white;
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  /*padding-bottom: 10px;*//*
+  border-radius: 50px;
+  color: #000; /* Add text color *//*
+}
+*/
+.options-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 50px;
+  padding: 3px 3PX 3PX 10px;
+  width: 1000px;
+  margin: 10px auto; /* Centers the containers and adds spacing */
+  cursor: pointer; /* Makes it clickable */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */  
+}
+
+/* Option Circle */
+.option {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #7928a7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*font-size: 12px;*/
+  font-weight: bold;
+  color: #333;
+}
+
+
+.options {
+  display: flex;
+  justify-content: left;
+  align-content: baseline;  
+  padding: 8px;
+  padding-right: 0px;
+   
+}
+/* Question box styles */
+.options-text-container {
+  background-color: transparent;
+  width: 1000px;  
+  display: flex;
+  flex-direction: row;
+  border-radius: 50px;
+  color: #000; /* Add text color */
+  padding: 0px;
+}
+
+.option-text{
+  font-size: 16px;
+  text-align: justify;
+  align-items: center;
+  padding: 8px; 
+
+
+}
+
+.option-number, .option-text {
+  display: inline-block;
+}
+
+
+.option-number {
+  width: 30px;
+}
+
+/*-------------------------OPTION EFFECT ------------------------------*/
+
+
+
+/* Hover Effect */
+.options-container:hover {
+  /*background-color: #ddd; /* Light gray on hover */
+  background-color: #f8f9fa;
+  border: 2px solid #7928a7;
+  transform: translateX(1px);
+}
+
+/* Correct & Incorrect Styling */
+.correct-answer {
+
+  background-color: #2ecc71 !important;
+  border-color: #27ae60;
+  color: white;
+}
+
+/* Ensure option (A, B, C, D) inside the correct answer is also white */
+.correct-answer .option {
+  color: white !important;
+}
+
+.wrong-answer {
+  /*background-color: #dc3545 !important; /* Red *//*
+  color: white !important;*/
+  background-color: #e74c3c !important;
+  border-color: #c0392b;
+  color: white;
+}
+
+/* Ensure option (A, B, C, D) inside the wrong answer is also white */
+.wrong-answer .option {
+  color: white !important;
+}
+
+/*---------*/
+
+
+/*--------------------------------------Solution  ------------------------------------------------------*/
+  /* Question box styles */
+.solution-box {
+  display: none;  /* Hidden until an option is selected */
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  /*margin-top: 20px;*/
+  margin-left: auto;  /* Centers the box */
+  margin-right: auto; /* Centers the box */
+  margin-top: 30px; /* Adds space at the top */
+  width: 1000px; /* Width of the main container */
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  gap: 5px; /* Adds space between child elements */
+  padding-bottom: 10px;
+}
+
+
+
+/* Question text container styles */
+.solution-label-container {
+  width: 100%;
+  
+  text-align: left;
+
+}
+
+.solution-label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+
+.solution-text-container {
+  width: 100%; /* Full width of the main container */
+  margin-top: 10px;
+  padding-bottom: 10px;
+  /*background-color: pink;*/
+
+}
+
+.correct-answer-label {
+  /*font-weight: bold;*/
+  font-size: 16px;
+}
+
+.correct-answer-text {
+  /*font-weight: bold;*/
+  font-size: 16px;
+  color: white;
+  text-align: justify;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+.explanation-label {
+  /*font-weight: bold;*/
+  font-size: 16px;
+}
+
+.explanation-text {
+  /*font-weight: bold;*/
+  font-size: 16px;
+  color: white;
+  text-align: justify;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+/* Bottom border */
+.bottom-border3 {
+  width: 15%;
+  height: 1px;
+  background-color: #fff;
+  margin-top: 5px;
+}
+
+/* Bottom border */
+.bottom-border4 {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin-top: 5px;
+}
+
+
+/*---------------------------------Footer ------------------------*/
+
+
+/* Footer styles */
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: #252525;
+  border-top: 2px solid white;
+  z-index: 1000; /* Ensure it stays above other content */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Separate left/right content */
+  /*padding: 0 0px;*/
+}
+
+.footer-left, .footer-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    
+}
+
+.footer-btn {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.footer-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Specific button positioning */
+.back-btn {
+    margin-left: 2px;
+}
+
+.next-btn {
+    margin-right: 2px;
+}
+
+
+/*----------------------------------Navigation bar---------------------------*/
+/* Add to footer styles */
+.footer-nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 0 10px;
+    scroll-behavior: smooth;
+    white-space: nowrap;/*
+    width: 100%;/*
+    max-width: 800px;*/
+}
+
+.nav-question-number {
+    width: 40px;
+    height: 38px;
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #7928a7; /* Add bottom border */
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0; /* Remove border radius */
+    margin: 0 2px;  
+}
+
+.nav-question-number:hover {
+    background-color: #9b4dca;
+}
+
+.nav-question-number.current {
+    background-color: #c0c0c0;
+    color: #000;
+    border-bottom: 3px solid #7928a7; /* Keep purple border for current */
+}
+
+/* Add these new classes */
+.nav-question-number.correct {  
+    border-bottom-color: #2ecc71 !important; /* Green */
+    background-color: #404040;
+}
+
+
+.nav-question-number.wrong {
+    border-bottom-color: #e74c3c !important; /* Red */
+    background-color: #404040;
+}
+
+
+
+/*--------------------------------pause------------------------------------------*/
+
+/* Pause Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    pointer-events: all;
+    z-index: 2001;
+    color: #000; /* Ensure text is visible */
+}
+
+.modal-button {
+    background: #7928a7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.modal-button:hover {
+    background: #6a1b9a;
+}
+
+/* Add this to disable interactions */
+.quiz-paused {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Ensure modal content stays clickable */
+.modal-content {
+    pointer-events: all;
+    z-index: 2001; /* Higher than overlay */
+}
+
+.modal-title {
+    color: #7928a7;
+    margin-bottom: 15px;
+}
+
+.test-title-modal {
+    color: #7928a7;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.modal-text {
+    color: #333;
+    margin: 15px 0;
+}
+
+/***--------------------------submit -----------------------------*/
+
+/* Add to modal styles */
+#submitModal .modal-content {
+    pointer-events: all;
+    z-index: 2002; /* Higher than pause modal */
+}
+
+#submitModal.modal-overlay {
+    z-index: 2001; /* Between pause modal and content */
+}
+
+#submitModal .modal-title {
+    color: #2ecc71; /* Green color for success */
+}
+
+/* Add transition for smooth display */
+.result-stats {
+    margin: 20px 0;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.modal-button.confirm {
+    background-color: #2ecc71;
+}
+
+/*-----------------------------Submit Btn*/
+
+
+/* New right container styles *//*
+.right-container {
+  position: fixed; /* Changed from absolute to fixed *//*
+  right: 15px; /* Distance from right edge of screen *//*
+  top: 90px; /* Adjust based on your header height *//*
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 3px 5px 3px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000; /* Ensure it stays above other content *//*
+  transform: translateX(0); /* Remove any horizontal translation *//*
+}*/
+
+
+.quickSubmitBtn {
+  position: fixed; /* Changed from absolute to fixed */
+  right: 15px; /* Distance from right edge of screen */
+  bottom: 60px; /* Adjust based on your header height */
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #7928a7;
+  color: white;
+  border: none;
+/*  padding: 5px 10px;  */
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);/*
+  position: fixed; /* Changed from absolute to fixed *//*
+  right: 15px; /* Distance from right edge of screen *//*
+  bottom: 50px; /* Adjust based on your header height */
+  display: flex;
+  align-items: center;/*
+  gap: 4px;
+  background-color: transparent;
+  border-radius: 50px;*/
+  padding: 3px 5px 3px 15px;/*
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000; /* Ensure it stays above other content *//*
+  transform: translateX(0); /* Remove any horizontal translation */
+}
+
+/*
+  position: fixed;
+  bottom: 80px;       /* Adjust if your footer nav is taller/shorter *//*
+  right: 20px;
+  z-index: 1000;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}*/
+
+.quickSubmitBtn:hover {
+background-color: #e03e00;
+}
+
+
+.submit-txt {
+  opacity: 100;
+  transition: opacity 0.2s ease;
+  color: white;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.submit-btn {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-left: auto; /* Pushes button to far right */
+}
+
+
+/* Hover state */
+.quickSubmitBtn:hover {
+  width: auto; /* Use auto width instead of fixed */
+  padding-right: 8px; /* Consistent padding */
+  background-color: #7928a7;
+}
+
