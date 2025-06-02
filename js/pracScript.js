@@ -1,8 +1,9 @@
 // pracScript.js
 
 // ─── Firestore Imports ────────────────────────────────────────────────────────────────────
-import { doc, updateDoc, writeBatch } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
-import { db } from "../backend/firebase/firebase.js"; // Adjust if your firebase.js is in a different path
+import { doc, updateDoc, writeBatch, getDoc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+import { db } from "../backend/firebase/firebase.js";
+import { fetchQuestions, updateMetaProgress } from "../backend/firebase/fetch.js";
 
 // ─── Globals & Timer Variables ─────────────────────────────────────────────────────────────
 let isPaused = false;
@@ -175,8 +176,6 @@ window.addEventListener("click", (event) => {
 
 
 /*------------------------------------------ Fetch & Slice Questions --------------------------------------*/
-import { fetchQuestions } from "../backend/firebase/fetch.js";
-
 async function loadQuestions(numQuestionsParam, collectionId) {
   try {
     // Check if we already have questions loaded
