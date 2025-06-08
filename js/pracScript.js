@@ -220,7 +220,7 @@ function displayQuestion(question = {}) {
 
   // Clear previous content
   questionNumberEl.textContent = "";
-  questionTextEl.textContent = "";
+  questionTextEl.innerHTML = "";
   examNameEl.textContent = "";
   optionsWrapper.innerHTML = "";
   correctAnswerText.textContent = "";
@@ -231,7 +231,7 @@ function displayQuestion(question = {}) {
     questionNumberEl.textContent = `Question No: ${question.questionNumber}`;
   }
   if (question.questionText) {
-    questionTextEl.textContent = question.questionText;
+    questionTextEl.innerHTML = question.questionText.replace(/\n/g, '<br>');
   }
   if (question.examName) {
     examNameEl.textContent = question.examName;
